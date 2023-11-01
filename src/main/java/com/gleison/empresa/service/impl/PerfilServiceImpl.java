@@ -13,37 +13,35 @@ import com.gleison.empresa.service.PerfilService;
 public class PerfilServiceImpl implements PerfilService{
 	
 	@Autowired
-	private PerfilRepo personRepo;
+	private PerfilRepo perfilRepo;
 
 	@Override
-	public Perfil insert(Perfil person) {
+	public Perfil insert(Perfil perfil) {
 		
-		return personRepo.save(person);
+		return perfilRepo.save(perfil);
 	}
 
 	@Override
 	public Perfil getPerfil(Integer id) {
-		// TODO Auto-generated method stub
-		return personRepo.findById(id).get();
+		return perfilRepo.findById(id).get();
 	}
 
 	@Override
 	public List<Perfil> getAllPerfil() {
-		// TODO Auto-generated method stub
-		return personRepo.findAll();
+		return perfilRepo.findAll();
 	}
 
 	@Override
 	public String delete(Integer id) {
-		// TODO Auto-generated method stub
-		personRepo.deleteById(id);
-		return "person deleted ";
+		perfilRepo.deleteById(id);
+		
+		String data =  "usuario " + id + " deletado com sucesso!";
+		return data;
 	}
 
 	@Override
-	public Perfil update(Perfil person) {
-		// TODO Auto-generated method stub
-		return personRepo.save(person);
+	public Perfil update(Perfil perfil) {
+		return perfilRepo.save(perfil);
 	}
 
 }

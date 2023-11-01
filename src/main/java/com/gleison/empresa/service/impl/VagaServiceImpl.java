@@ -17,32 +17,28 @@ public class VagaServiceImpl implements VagaService{
 
 	@Override
 	public Vaga insert(Vaga vaga) {
-		
 		return vagaRepo.save(vaga);
 	}
 
 	@Override
 	public Vaga getVaga(Integer id) {
-		// TODO Auto-generated method stub
 		return vagaRepo.findById(id).get();
 	}
 
 	@Override
 	public List<Vaga> getAllVaga() {
-		// TODO Auto-generated method stub
 		return vagaRepo.findAll();
 	}
 
 	@Override
 	public String delete(Integer id) {
-		// TODO Auto-generated method stub
 		vagaRepo.deleteById(id);
-		return "person deleted ";
+		String data =  "vaga " + id + " deletado com sucesso!";
+		return data;
 	}
 
 	@Override
 	public Vaga update(Vaga vaga) {
-		// TODO Auto-generated method stub
 		return vagaRepo.save(vaga);
 	}
 
